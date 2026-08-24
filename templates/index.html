@@ -36,9 +36,51 @@
             border-bottom: 1px solid var(--card-border);
         }
 
+        .logo-badge span {
+            color: var(--brand-orange);
+            font-weight: 900;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+            line-height: 1;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* Main Brand Title: MJ CLEANING */
+        .logo-title {
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Tagline Wrapper with Accent Lines */
+        .logo-tagline-wrap {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 4px;
+        }
+
+        .logo-tagline {
+            font-size: 0.45rem;
+            font-weight: 100;
+            color: var(--brand-orange);
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* Horizontal lines flanking the tagline */
+        .tagline-line {
+            height: 1px;
+            background-color: var(--brand-orange);
+            flex-grow: 1;
+        }
+
         .logo-badge {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border: 2px solid var(--brand-orange);
             border-radius: 50%;
             display: flex;
@@ -164,7 +206,14 @@
             <div class="logo-container">
                 <div class="logo-badge">MJ</div>
             </div>
-            <p class="navbar-text">Professional Cleaning Services</p>
+            <div class="d-flex flex-column lh-1">
+                <span class="logo-title"><span class="text-orange">MJ</span> CLEANING</span>
+                <div class="logo-tagline-wrap">
+                    <span class="tagline-line"></span>
+                    <span class="logo-tagline">CLEAN SPACES. BETTER PLACES.</span>
+                    <span class="tagline-line"></span>
+                </div>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
