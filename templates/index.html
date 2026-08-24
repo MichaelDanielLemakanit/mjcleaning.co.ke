@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Cleaning Services</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-orange: #FF6B00;
+            --brand-orange-hover: #E05E00;
+            --dark-bg: #0d0e10;
+            --card-bg: #16181c;
+            --card-border: #262930;
+            --text-muted-custom: #a0a5b1;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* Navbar Customization */
+        .navbar-custom {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .logo-badge {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--brand-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--brand-orange);
+        }
+
+        p {
+            margin: 0;
+            gap: 2px;
+        }
+
+        /* Accent Colors & Buttons */
+        .text-orange {
+            color: var(--brand-orange) !important;
+        }
+
+        .bg-orange {
+            background-color: var(--brand-orange) !important;
+            color: #fff;
+        }
+
+        .btn-orange {
+            background-color: var(--brand-orange);
+            color: #ffffff;
+            border: 1px solid var(--brand-orange);
+            font-weight: 600;
+        }
+
+        .btn-orange:hover {
+            background-color: var(--brand-orange-hover);
+            color: #ffffff;
+            border-color: var(--brand-orange-hover);
+        }
+
+        .btn-outline-orange {
+            background-color: transparent;
+            color: var(--brand-orange);
+            border: 1px solid var(--brand-orange);
+            font-weight: 600;
+        }
+
+        .btn-outline-orange:hover {
+            background-color: var(--brand-orange);
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(13, 14, 16, 0.88), rgba(13, 14, 16, 0.88)),
+                url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: white;
+            padding: 90px 0;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        /* Cards & Containers */
+        .bg-card-custom {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+        }
+
+        .card-service {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+
+        .card-service:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-orange);
+        }
+
+        .text-custom-muted {
+            color: var(--text-muted-custom);
+        }
+
+        .input-dark-picker {
+            color-scheme: dark;
+            background-color: #0d0e10 !important;
+            color: #ffffff !important;
+        }
+
+        /* Style the Flatpickr Calendar Popup */
+        .flatpickr-calendar {
+            border-radius: 16px !important;
+            /* Adjust corner roundness here */
+            overflow: hidden;
+            border: 1px solid var(--card-border) !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.986) !important;
+        }
+
+        /* Ensure month header respects top rounded corners */
+        .flatpickr-months {
+            border-top-left-radius: 16px !important;
+            border-top-right-radius: 16px !important;
+        }
+
+        /* Custom Form Controls */
+        .form-control-dark {
+            background-color: #0d0e10;
+            border: 1px solid var(--card-border);
+            color: #ffffff;
+        }
+
+        .form-control-dark:focus {
+            background-color: #0d0e10;
+            border-color: var(--brand-orange);
+            color: #ffffff;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo-badge">MJ</div>
+            </div>
+            <p class="navbar-text">Professional Cleaning Services</p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services & Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why-us">Why Choose Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-orange ms-lg-3 rounded-pill px-4">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center text-lg-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="badge bg-orange mb-3 px-3 py-2 fs-6">Nairobi's Trusted Cleaning Partner</span>
+                    <h1 class="display-4 fw-bold mb-3">PROFESSIONAL <span class="text-orange">CLEANING SERVICES</span>
+                    </h1>
+                    <p class="lead text-custom-muted mb-4">From residential homes to high-traffic corporate offices, MJ
+                        Cleaning Services delivers vetted staff, standard operating procedures, and 100% satisfaction
+                        across Nairobi.</p>
+                    <div class="d-sm-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#contact" class="btn btn-orange btn-lg px-4 mb-2 mb-sm-0">Request Commercial Quote</a>
+                        <a href="#services" class="btn btn-outline-light btn-lg px-4">Explore Rates</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-orange fs-1">Our Service Offerings & Pricing</h2>
+                <p class="text-custom-muted">Transparent rates tailored to your property size and cleaning frequency.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                {% for service in services %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 card-service p-3">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-secondary">{{ service.badge }}</span>
+                                <i class="bi bi-check-circle-fill text-orange fs-4"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-2 text-white">{{ service.title }}</h4>
+                            <p class="card-text text-custom-muted flex-grow-1">{{ service.desc }}</p>
+                            <div class="border-top border-secondary pt-3 mt-3">
+                                <span class="text-uppercase small text-custom-muted d-block">Starting Rate</span>
+                                <span class="fw-bold text-orange fs-5">{{ service.price }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Discount Callout -->
+            <div class="bg-card-custom mt-5 text-center p-4 rounded-3 border-orange" role="alert"
+                style="border: 1px solid var(--brand-orange);">
+                <h4 class="alert-heading fw-bold text-orange"><i class="bi bi-tags-fill me-2"></i> Save 15% - 20% with
+                    Recurring Contracts!</h4>
+                <p class="mb-0 text-custom-muted">Sign up for weekly home cleaning or continuous monthly office
+                    maintenance to receive our corporate bundle discount.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-5 border-top border-bottom border-secondary">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white">Why MJ Cleaning Services Stands Out</h2>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4 bg-card-custom rounded-3 h-100">
+                        <i class="bi bi-shield-lock-fill text-orange display-4 mb-3"></i>
+                        <h4 class="fw-bold text-white">Vetted & Uniformed Staff</h4>
+                        <p class="text-custom-muted">Background-checked, police-cleared personnel wearing branded
+                            dustcoats and ID badges for maximum security clearance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-card-custom rounded-3 h-100">
+                        <i class="bi bi-person-lines-fill text-orange display-4 mb-3"></i>
+                        <h4 class="fw-bold text-white">Guaranteed Relief Staff</h4>
+                        <p class="text-custom-muted">For commercial accounts, if a regular cleaner falls sick, we deploy
+                            a trained substitute immediately at no additional cost.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-card-custom rounded-3 h-100">
+                        <i class="bi bi-droplet-half text-orange display-4 mb-3"></i>
+                        <h4 class="fw-bold text-white">Color-Coded Hygiene</h4>
+                        <p class="text-custom-muted">We eliminate cross-contamination using strict color-coded
+                            microfiber cloths and professional-grade chemical solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Quote Form -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4 text-orange">Get a Free Estimate</h2>
+                    <p class="mb-4 text-custom-muted">Need an office site assessment or residential package? Leave your
+                        details below and our team will get back to you within 2 hours.</p>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-geo-alt-fill text-orange fs-4 me-3"></i>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-telephone-fill text-orange fs-4 me-3"></i>
+                        <span>+254 756 295 128</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-envelope-fill text-orange fs-4 me-3"></i>
+                        <span>info@mjcleaning.co.ke</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <form id="whatsappForm" class="bg-card-custom p-4 rounded-3 text-white">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <input type="text" id="clientName" class="form-control form-control-dark"
+                                placeholder="Daniel Lemakanit" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Phone Number</label>
+                                <input type="tel" id="clientPhone" class="form-control form-control-dark"
+                                    placeholder="0712 345 678" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Email Address</label>
+                                <input type="email" id="clientEmail" class="form-control form-control-dark"
+                                    placeholder="name@example.com" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Service Required</label>
+                                <select id="serviceType" class="form-select form-control-dark">
+                                    <option value="Regular House Cleaning">Regular House Cleaning</option>
+                                    <option value="Deep Cleaning">Deep Cleaning</option>
+                                    <option value="Office & Commercial Cleaning">Office & Commercial Cleaning</option>
+                                    <option value="Carpet & Upholstery Cleaning">Carpet & Upholstery Cleaning</option>
+                                    <option value="Post-Construction Cleaning">Post-Construction Cleaning</option>
+                                    <option value="Specialised / Fumigation">Specialised / Fumigation</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Property Type</label>
+                                <input type="text" id="propertyType" class="form-control form-control-dark"
+                                    placeholder="e.g., Commercial Office / Apartment" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Preferred Date</label>
+                                <input type="text" id="bookingDate" class="form-control form-control-dark rounded-3"
+                                    placeholder="Select Date" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Preferred Time</label>
+                                <input type="time" id="bookingTime" class="form-control form-control-dark" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Location & Notes</label>
+                            <textarea id="locationNotes" class="form-control form-control-dark" rows="2"
+                                placeholder="e.g., Westlands, 3rd floor, bring extra ladders"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-orange w-100 fw-bold py-2">
+                            <i class="bi bi-whatsapp me-2"></i>Request Inspection / Pricing via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+                <!-- JavaScript to handle WhatsApp submission -->
+                <script>
+                    document.getElementById('whatsappForm').addEventListener('submit', function (e) {
+                        e.preventDefault();
+
+
+                        const businessPhoneNumber = "254756295128";
+
+                        // 2. Extract values from form fields
+                        const name = document.getElementById('clientName').value;
+                        const phone = document.getElementById('clientPhone').value;
+                        const email = document.getElementById('clientEmail').value;
+                        const service = document.getElementById('serviceType').value;
+                        const propertyType = document.getElementById('propertyType').value;
+                        const date = document.getElementById('bookingDate').value;
+                        const time = document.getElementById('bookingTime').value;
+                        const locationNotes = document.getElementById('locationNotes').value;
+
+                        // 3. Format the structured message
+                        const message = `Hello MJ Cleaners!\n\n` +
+                            `*New Cleaning Booking Request*\n` +
+                            `• *Service:* ${service}\n` +
+                            `• *Quantity/Units:* 1\n` +
+                            `• *Property Type:* ${propertyType}\n` +
+                            `• *Date:* ${date}\n` +
+                            `• *Time:* ${time}\n` +
+                            `• *Estimated Price:* Quote Pending Inspection\n\n` +
+                            `*Client Details:*\n` +
+                            `• *Name/Company:* ${name}\n` +
+                            `• *Phone:* ${phone}\n` +
+                            `• *Email:* ${email}\n` +
+                            `• *Location & Notes:* ${locationNotes}`;
+
+                        // 4. Encode text and redirect to WhatsApp API
+                        const whatsappUrl = `https://wa.me/${businessPhoneNumber}?text=${encodeURIComponent(message)}`;
+                        window.open(whatsappUrl, '_blank');
+                    });
+                </script>
+                <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+                <script>
+                    flatpickr("#bookingDate", {
+                        dateFormat: "Y-m-d",
+                        minDate: "today",
+                        theme: "react"
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-card-custom text-center text-custom-muted py-3 border-top border-secondary">
+        <div class="container">
+            <p class="mb-0 small">&copy; 2026 MJ Cleaning Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
