@@ -58,6 +58,7 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
+
         /* @media (min-width: 576px) {
             .logo-title {
                 font-size: 1.35rem;
@@ -359,8 +360,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <span class="badge bg-orange mb-3 px-3 py-2 fs-6">Nairobi's Trusted Cleaning Partner</span>
-                    <h1 class="display-5 display-lg-4 fw-bold mb-3">PROFESSIONAL <span class="text-orange">CLEANING SERVICES</span></h1>
-                    <p class="lead text-custom-muted mb-4 fs-6 fs-md-5">From residential homes to high-traffic corporate offices, MJ
+                    <h1 class="display-5 display-lg-4 fw-bold mb-3">PROFESSIONAL <span class="text-orange">CLEANING
+                            SERVICES</span></h1>
+                    <p class="lead text-custom-muted mb-4 fs-6 fs-md-5">From residential homes to high-traffic corporate
+                        offices, MJ
                         Cleaning Services delivers vetted staff, standard operating procedures, and 100% satisfaction
                         across Nairobi.</p>
                     <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
@@ -371,13 +374,17 @@
             </div>
         </div>
     </section>
+    
 
     <!-- Services Section -->
     <section id="services" class="py-5">
+        <!-- cards -->
+         
         <div class="container">
             <div class="text-center mb-4 mb-md-5">
                 <h2 class="fw-bold text-orange fs-2 fs-md-1">Our Service Offerings & Pricing</h2>
-                <p class="text-custom-muted">Transparent rates tailored to your property size and cleaning frequency.</p>
+                <p class="text-custom-muted">Transparent rates tailored to your property size and cleaning frequency.
+                </p>
             </div>
 
             <div class="row g-4">
@@ -385,7 +392,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card h-100 card-service overflow-hidden">
                         {% if service.image %}
-                        <img src="{{ service.image }}" class="card-service-img" alt="{{ service.title }}">
+                        <img src="{{ url_for('static', filename=service.image) }}" class="card-service-img" alt="{{ service.title }}">
                         {% endif %}
                         <div class="card-body d-flex flex-column p-4">
                             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -395,7 +402,8 @@
                             <h4 class="card-title fw-bold mb-2 text-white fs-5">{{ service.title }}</h4>
                             <p class="card-text text-custom-muted flex-grow-1 small">{{ service.desc }}</p>
                             <div class="border-top border-secondary pt-3 mt-3">
-                                <span class="text-uppercase small text-custom-muted d-block" style="font-size: 0.75rem;">Starting Rate</span>
+                                <span class="text-uppercase small text-custom-muted d-block"
+                                    style="font-size: 0.75rem;">Starting Rate</span>
                                 <span class="fw-bold text-orange fs-5">{{ service.price }}</span>
                             </div>
                         </div>
@@ -407,9 +415,14 @@
             <!-- Discount Callout -->
             <div class="bg-card-custom mt-4 mt-md-5 text-center p-3 p-md-4 rounded-3" role="alert"
                 style="border: 1px solid var(--brand-orange);">
-                <h4 class="alert-heading fw-bold text-orange fs-5 fs-md-4"><i class="bi bi-tags-fill me-2"></i> Save 15% - 20% with Recurring Contracts!</h4>
+                <h4 class="alert-heading fw-bold text-orange fs-5 fs-md-4"><i class="bi bi-tags-fill me-2"></i> Save 15%
+                    - 20% with Recurring Contracts!</h4>
                 <p class="mb-0 text-custom-muted small">Sign up for weekly home cleaning or continuous monthly office
                     maintenance to receive our corporate bundle discount.</p>
+                <div class="progress text-white" role="progressbar" aria-label="Basic example" aria-valuenow="20" aria-valuemin="20"
+                    aria-valuemax="100" style="height: 8px; border-radius: 4px; margin-top: 20px; color: var(--brand-orange);">
+                    <div class="progress-bar" style="width: 20%; background-color: var(--brand-orange);"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -433,7 +446,8 @@
                     <div class="p-4 bg-card-custom rounded-3 h-100">
                         <i class="bi bi-person-lines-fill text-orange display-5 display-md-4 mb-3"></i>
                         <h4 class="fw-bold text-white fs-5">Guaranteed Relief Staff</h4>
-                        <p class="text-custom-muted small">For commercial accounts, if a regular cleaner falls sick, we deploy
+                        <p class="text-custom-muted small">For commercial accounts, if a regular cleaner falls sick, we
+                            deploy
                             a trained substitute immediately at no additional cost.</p>
                     </div>
                 </div>
@@ -458,14 +472,20 @@
                     </div>
                     <div class="about-text">
                         <span class="section-subtitle">ABOUT MJ CLEANER</span>
-                        <h2 class="fw-bold text-orange fs-2 fs-md-1 mb-3">Keeping Your Corporate & Living Spaces Spotless</h2>
-                        <p class="text-custom-muted mb-3">MJ Cleaner provides specialized cleaning solutions for residential, commercial, and industrial
-                            clients. From daily office upkeep and warehouse dust containment to sofa steam extraction and
+                        <h2 class="fw-bold text-orange fs-2 fs-md-1 mb-3">Keeping Your Corporate & Living Spaces
+                            Spotless</h2>
+                        <p class="text-custom-muted mb-3">MJ Cleaner provides specialized cleaning solutions for
+                            residential, commercial, and industrial
+                            clients. From daily office upkeep and warehouse dust containment to sofa steam extraction
+                            and
                             house move-in cleaning, our team guarantees deep hygiene and spotless results.</p>
                         <ul class="info-block-list text-custom-muted">
-                            <li><i class="fa-solid fa-circle-check"></i> <span>One-off deep cleans or continuous regular contract visits</span></li>
-                            <li><i class="fa-solid fa-circle-check"></i> <span>Industrial-grade equipment for large floor and warehouse surfaces</span></li>
-                            <li><i class="fa-solid fa-circle-check"></i> <span>Fast response times across Nairobi CBD, Westlands, Kilimani, and surrounds</span></li>
+                            <li><i class="fa-solid fa-circle-check"></i> <span>One-off deep cleans or continuous regular
+                                    contract visits</span></li>
+                            <li><i class="fa-solid fa-circle-check"></i> <span>Industrial-grade equipment for large
+                                    floor and warehouse surfaces</span></li>
+                            <li><i class="fa-solid fa-circle-check"></i> <span>Fast response times across Nairobi CBD,
+                                    Westlands, Kilimani, and surrounds</span></li>
                         </ul>
                     </div>
                 </div>
@@ -487,7 +507,8 @@
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
                             <h4 class="fs-5 fw-bold">Primary Service Zones</h4>
-                            <p class="text-custom-muted small">Nairobi CBD, Westlands, Kilimani, Lavington, Karen, Ngong Road, Syokimau, Kiambu Road,
+                            <p class="text-custom-muted small">Nairobi CBD, Westlands, Kilimani, Lavington, Karen, Ngong
+                                Road, Syokimau, Kiambu Road,
                                 Kasarani, Utawala & Metropolitan environs.</p>
                         </div>
                     </div>
@@ -497,7 +518,8 @@
                         <div>
                             <h4 class="fs-5 fw-bold">Working Hours</h4>
                             <p class="text-custom-muted small">Monday – Saturday: 8:00 AM – 6:00 PM<br>
-                                <span class="text-white">Sunday & Night Shifts: On Special Request (For Warehouses & Offices)</span>
+                                <span class="text-white">Sunday & Night Shifts: On Special Request (For Warehouses &
+                                    Offices)</span>
                             </p>
                         </div>
                     </div>
@@ -522,19 +544,20 @@
             </div>
         </div>
     </section>
-
     <!-- Contact & Quote Form -->
     <section id="contact" class="py-5 border-top border-bottom border-secondary">
         <div class="container">
             <div class="text-center mb-4 mb-md-5">
                 <h2 class="fw-bold text-orange fs-2 fs-md-1">BOOKING REQUEST</h2>
                 <h3 class="fw-bold text-white fs-4 fs-md-3">Schedule Your Service via WhatsApp</h3>
-                <p class="text-custom-muted small">Fill out the details below to generate a pre-formatted order message instantly.</p>
+                <p class="text-custom-muted small">Fill out the details below to generate a pre-formatted order message
+                    instantly.</p>
             </div>
             <div class="row g-4 g-lg-5">
                 <div class="col-12 col-lg-6">
                     <h3 class="fw-bold mb-3 text-orange fs-4 fs-md-3">Get a Free Estimate</h3>
-                    <p class="mb-4 text-custom-muted small">Need an office site assessment or residential package? Leave your
+                    <p class="mb-4 text-custom-muted small">Need an office site assessment or residential package? Leave
+                        your
                         details below and our team will get back to you within 2 hours.</p>
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-geo-alt-fill text-orange fs-4 me-3"></i>
