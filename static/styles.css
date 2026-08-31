@@ -1,0 +1,63 @@
+.marquee-container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    border: 1px solid rgba(165, 165, 165, 0.2);
+    border-radius: 12px;
+    padding: 10px 0;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1.5rem;
+    padding-right: 1.5rem;
+    flex-shrink: 0;
+    min-width: 100%;
+    animation: scrollMarquee 25s linear infinite;
+}
+
+/* Pause animation on hover */
+.marquee-container:hover .group {
+    animation-play-state: paused;
+}
+
+.cards {
+    flex: 0 0 300px; /* Gives each rating card a proper width */
+    height: 180px;
+    padding: 1.25rem;
+    background: #0d0e10;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.review-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.client-role {
+    font-size: 0.75rem;
+}
+
+/* Smooth Infinite Scroll Translation */
+@keyframes scrollMarquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
