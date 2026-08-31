@@ -92,3 +92,59 @@
 .whatsapp-icon {
     margin-top: 0;
 }
+/* Custom Accordion Styling for MJ Cleaning */
+
+/* Outer accordion container border */
+#faqAccordion {
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Individual accordion items */
+#faqAccordion .accordion-item {
+    background-color: #0d0e10; /* Dark background */
+    border: none;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+#faqAccordion .accordion-item:last-child {
+    border-bottom: none;
+}
+
+/* Header button (collapsed state) */
+#faqAccordion .accordion-button {
+    background-color: #0d0e10;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 1.25rem 1.5rem;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+/* Header button (expanded state) */
+#faqAccordion .accordion-button:not(.collapsed) {
+    background-color: #16181c;
+    color: #E05E00; /* MJ Orange text when open */
+    box-shadow: none;
+}
+
+/* Focus state outline override */
+#faqAccordion .accordion-button:focus {
+    border-color: rgba(224, 94, 0, 0.5);
+    box-shadow: 0 0 0 0.25rem rgba(224, 94, 0, 0.25);
+}
+
+/* Customizing the dropdown arrow icon to MJ Orange */
+#faqAccordion .accordion-button::after {
+    filter: invert(47%) sepia(93%) saturate(2250%) hue-rotate(1deg) brightness(98%) contrast(101%);
+}
+
+/* Accordion body content */
+#faqAccordion .accordion-body {
+    background-color: #121418;
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid #2a2a2a;
+}
