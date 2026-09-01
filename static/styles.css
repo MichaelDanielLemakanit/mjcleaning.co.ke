@@ -71,34 +71,63 @@
 /* Floating WhatsApp Button Styles */
 .whatsapp-float {
     position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 30px;
-    right: 30px;
+    bottom: 25px;
+    right: 25px;
     background-color: #25d366;
-    color: #ffffff;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 32px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+    color: #ffffff !important;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    background-color: #128c7e;
+    font-weight: 700;
+    font-size: 0.95rem;
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+    animation: whatsappPulse 2s infinite;
+  }
+  
+  .whatsapp-float i {
+    font-size: 1.5rem;
+  }
+  
+  .whatsapp-float:hover {
+    background-color: #20ba5a;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
     color: #ffffff;
-    transform: scale(1.1);
-    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.whatsapp-icon {
-    margin-top: 0;
-}
+  }
+  
+  /* Subtle Pulsing Effect */
+  @keyframes whatsappPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+      box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+  }
+  
+  /* Responsive adjustment for small screens */
+  @media (max-width: 576px) {
+    .whatsapp-float-text {
+      display: none; /* Collapses to icon-only on mobile devices */
+    }
+    .whatsapp-float-btn {
+      padding: 14px;
+      border-radius: 50%;
+      bottom: 20px;
+      right: 20px;
+    }
+    .whatsapp-float i {
+      font-size: 1.6rem;
+    }
+  }
 /* Custom Accordion Styling for MJ Cleaning */
 
 /* Outer accordion container border */
