@@ -148,128 +148,129 @@
         }
 
         /* wheel container */
-.wheel-container {
-    position: relative;
-    width: 320px;
-    height: 320px;
-    margin: 22px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .wheel-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            margin: 22px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.service-wheel {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    animation: rotateWheel 25s linear infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .service-wheel {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            animation: rotateWheel 25s linear infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.service-wheel:hover {
-    animation-play-state: paused;
-}
+        .service-wheel:hover {
+            animation-play-state: paused;
+        }
 
-.wheel-center {
-    width: 110px;
-    height: 110px;
-    border: 3px solid var(--brand-orange);
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2;
-    background-color: var(--brand-dark, #0d0e10);
-}
+        .wheel-center {
+            width: 110px;
+            height: 110px;
+            border: 3px solid var(--brand-orange);
+            border-radius: 50%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+            background-color: var(--brand-dark, #0d0e10);
+        }
 
-.wheel-center h3 {
-    color: var(--brand-orange);
-}
+        .wheel-center h3 {
+            color: var(--brand-orange);
+        }
 
-.wheel-center p {
-    font-size: 0.6rem;
-    letter-spacing: 1px;
-}
+        .wheel-center p {
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+        }
 
-/* Base positioning container with 3D perspective */
-.wheel-item {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    perspective: 1000px; /* Enables 3D perspective */
-    transform: rotate(calc(360deg / 6 * var(--i))) translate(140px) rotate(calc(-360deg / 6 * var(--i)));
-}
+        /* Base positioning container with 3D perspective */
+        .wheel-item {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            perspective: 1000px;
+            /* Enables 3D perspective */
+            transform: rotate(calc(360deg / 6 * var(--i))) translate(140px) rotate(calc(-360deg / 6 * var(--i)));
+        }
 
-/* 3D Flipping Card Container */
-.wheel-item-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-}
+        /* 3D Flipping Card Container */
+        .wheel-item-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
 
-/* Flip Trigger on Hover */
-.wheel-item:hover .wheel-item-inner {
-    transform: rotateY(180deg);
-}
+        /* Flip Trigger on Hover */
+        .wheel-item:hover .wheel-item-inner {
+            transform: rotateY(180deg);
+        }
 
-/* Common Face Styling */
-.wheel-item-front,
-.wheel-item-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border: 2px solid var(--brand-orange);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
+        /* Common Face Styling */
+        .wheel-item-front,
+        .wheel-item-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: 2px solid var(--brand-orange);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
 
-/* Front Face */
-.wheel-item-front {
-    background-color: var(--brand-dark, #0d0e10);
-    color: var(--brand-white);
-    font-size: 0.9rem;
-}
+        /* Front Face */
+        .wheel-item-front {
+            background-color: var(--brand-dark, #0d0e10);
+            color: var(--brand-white);
+            font-size: 0.9rem;
+        }
 
-.wheel-item-front span,
-.wheel-item-back {
-    font-size: 0.5rem;
-    color: var(--text-white);
-    margin-top: 2px;
-}
+        .wheel-item-front span,
+        .wheel-item-back {
+            font-size: 0.5rem;
+            color: var(--text-white);
+            margin-top: 2px;
+        }
 
-/* Back Face */
-.wheel-item-back {
-    background-color: var(--brand-orange);
-    color: #ffffff;
-    transform: rotateY(180deg);
-}
+        /* Back Face */
+        .wheel-item-back {
+            background-color: var(--brand-orange);
+            color: #ffffff;
+            transform: rotateY(180deg);
+        }
 
-@keyframes rotateWheel {
-    100% {
-        transform: rotate(360deg);
-    }
-}
+        @keyframes rotateWheel {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-@media (min-width: 992px) {
-    .hero-section {
-        padding: 90px 0;
-    }
-}
+        @media (min-width: 992px) {
+            .hero-section {
+                padding: 90px 0;
+            }
+        }
 
         /* Cards & Containers */
         .bg-card-custom {
@@ -503,9 +504,6 @@
         .email a {
             transition: color 0.3s ease;
         }
-
-
-
     </style>
 </head>
 
@@ -564,7 +562,7 @@
                             <h3 class="fw-bold mb-0">MJ</h3>
                             <p class="mb-0">Cleaning</p>
                         </div>
-                
+
                         <div class="wheel-item" style="--i: 0;">
                             <div class="wheel-item-inner">
                                 <div class="wheel-item-front">
@@ -572,12 +570,12 @@
                                     <span>Regular House<br>Cleaning</span>
                                 </div>
                                 <div class="wheel-item-back">
-                                     <i class="fa-solid fa-home"></i>
+                                    <i class="fa-solid fa-home"></i>
                                     <span>Regular House<br>Cleaning</span>
                                 </div>
                             </div>
                         </div>
-                
+
                         <div class="wheel-item" style="--i: 1;">
                             <div class="wheel-item-inner">
                                 <div class="wheel-item-front">
@@ -590,7 +588,7 @@
                                 </div>
                             </div>
                         </div>
-                
+
                         <div class="wheel-item" style="--i: 2;">
                             <div class="wheel-item-inner">
                                 <div class="wheel-item-front">
@@ -603,7 +601,7 @@
                                 </div>
                             </div>
                         </div>
-                
+
                         <div class="wheel-item" style="--i: 3;">
                             <div class="wheel-item-inner">
                                 <div class="wheel-item-front">
@@ -616,7 +614,7 @@
                                 </div>
                             </div>
                         </div>
-                
+
                         <div class="wheel-item" style="--i: 4;">
                             <div class="wheel-item-inner">
                                 <div class="wheel-item-front">
@@ -629,7 +627,7 @@
                                 </div>
                             </div>
                         </div>
-                
+
                         <div class="wheel-item" style="--i: 5;">
                             <div class="wheel-item-inner">
                                 <div class="wheel-item-front">
@@ -711,32 +709,43 @@
     <section id="why-us" class="py-5 border-top border-bottom border-secondary">
         <div class="container">
             <div class="text-center mb-4 mb-md-5">
-                <h2 class="fw-bold text-white fs-2 fs-md-1">Why <span style="color: #E05E00;">MJ</span> Cleaning Services Stands Out</h2>
+                <h2 class="fw-bold text-white fs-2 fs-md-1">Why <span style="color: #E05E00;">MJ</span> Cleaning
+                    Services Stands Out</h2>
             </div>
             <div class="row g-4 text-center">
+                <!-- Card 1 -->
                 <div class="col-12 col-md-4">
-                    <div class="p-4 bg-card-custom rounded-3 h-100">
-                        <i class="bi bi-shield-lock-fill text-orange display-5 display-md-4 mb-3"></i>
-                        <h4 class="fw-bold text-white fs-5">Vetted & Uniformed Staff</h4>
-                        <p class="text-custom-muted small">Background-checked, police-cleared personnel wearing branded
-                            dustcoats and ID badges for maximum security clearance.</p>
+                    <div class="animated-orange-card h-100">
+                        <div class="p-4 bg-card-custom rounded-3 h-100">
+                            <i class="bi bi-shield-lock-fill text-orange display-5 display-md-4 mb-3"></i>
+                            <h4 class="fw-bold text-white fs-5">Vetted & Uniformed Staff</h4>
+                            <p class="text-custom-muted small mb-0">Background-checked, police-cleared personnel wearing branded
+                                dustcoats and ID badges for maximum security clearance.</p>
+                        </div>
                     </div>
                 </div>
+            
+                <!-- Card 2 -->
                 <div class="col-12 col-md-4">
-                    <div class="p-4 bg-card-custom rounded-3 h-100">
-                        <i class="bi bi-person-lines-fill text-orange display-5 display-md-4 mb-3"></i>
-                        <h4 class="fw-bold text-white fs-5">Guaranteed Relief Staff</h4>
-                        <p class="text-custom-muted small">For commercial accounts, if a regular cleaner falls sick, we
-                            deploy
-                            a trained substitute immediately at no additional cost.</p>
+                    <div class="animated-orange-card h-100">
+                        <div class="p-4 bg-card-custom rounded-3 h-100">
+                            <i class="bi bi-person-lines-fill text-orange display-5 display-md-4 mb-3"></i>
+                            <h4 class="fw-bold text-white fs-5">Guaranteed Relief Staff</h4>
+                            <p class="text-custom-muted small mb-0">For commercial accounts, if a regular cleaner falls sick, we deploy
+                                a trained substitute immediately at no additional cost.</p>
+                        </div>
                     </div>
                 </div>
+            
+                <!-- Card 3 -->
                 <div class="col-12 col-md-4">
-                    <div class="p-4 bg-card-custom rounded-3 h-100">
-                        <i class="bi bi-droplet-half text-orange display-5 display-md-4 mb-3"></i>
-                        <h4 class="fw-bold text-white fs-5">Color-Coded Hygiene</h4>
-                        <p class="text-custom-muted small">We eliminate cross-contamination using strict color-coded
-                            microfiber cloths and professional-grade chemical solutions.</p>
+                    <div class="animated-orange-card h-100">
+                        <div class="p-4 bg-card-custom rounded-3 h-100">
+                            <i class="bi bi-droplet-half text-orange display-5 display-md-4 mb-3"></i>
+                            <h4 class="fw-bold text-white fs-5">Color-Coded Hygiene</h4>
+                            <p class="text-custom-muted small mb-0">We eliminate cross-contamination using strict color-coded
+                                microfiber cloths and professional-grade chemical solutions.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1044,138 +1053,154 @@
         </div>
     </section>
     <!-- Floating WhatsApp Button -->
-<!-- <a href="https://wa.me/254756295128?text=Hello%20MJ%20Cleaning,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
+    <!-- <a href="https://wa.me/254756295128?text=Hello%20MJ%20Cleaning,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
    class="whatsapp-float" 
    target="_blank" 
    rel="noopener noreferrer"
    aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
 </a> -->
-<a href="https://wa.me/254756295128?text=Hello%20MJ%20Cleaning,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
-class="whatsapp-float" 
-target="_blank" 
-rel="noopener noreferrer" 
-aria-label="Chat on WhatsApp">
-<i class="fa-brands fa-whatsapp"></i>
-<span class="whatsapp-float-text">Chat with us live today</span>
-</a>
+    <a href="https://wa.me/254756295128?text=Hello%20MJ%20Cleaning,%20I%20would%20like%20to%20inquire%20about%20your%20services."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-float-text">Chat with us live today</span>
+    </a>
 
-<!-- frequently asked questions -->
-<div class="accordion" id="faqAccordion">
-  
-    <!-- Item 1 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
-          What is the cost of your cleaning services?
-        </button>
-      </h2>
-      <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Our pricing depends on the size of your space and the type of cleaning required (regular, deep cleaning, or specialized services). Contact us for a free instant estimate tailored to your home or office.
+    <!-- frequently asked questions -->
+    <div class="accordion" id="faqAccordion">
+
+        <!-- Item 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne"
+                    aria-expanded="true" aria-controls="faqOne">
+                    What is the cost of your cleaning services?
+                </button>
+            </h2>
+            <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Our pricing depends on the size of your space and the type of cleaning required (regular, deep
+                    cleaning, or specialized services). Contact us for a free instant estimate tailored to your home or
+                    office.
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  
-    <!-- Item 2 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
-          Do I have to be home when you are cleaning?
-        </button>
-      </h2>
-      <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          No, you do not need to be home. Many of our clients provide key access or entry instructions. Our team is fully vetted, trustworthy, and committed to working securely while you attend to your day.
+
+        <!-- Item 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                    Do I have to be home when you are cleaning?
+                </button>
+            </h2>
+            <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    No, you do not need to be home. Many of our clients provide key access or entry instructions. Our
+                    team is fully vetted, trustworthy, and committed to working securely while you attend to your day.
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  
-    <!-- Item 3 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
-          Do you offer a satisfaction guarantee?
-        </button>
-      </h2>
-      <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Yes! We offer a 100% satisfaction guarantee. If you are not satisfied with any area we cleaned, let us know within 24 hours and we will re-clean it at no extra charge.
+
+        <!-- Item 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                    Do you offer a satisfaction guarantee?
+                </button>
+            </h2>
+            <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes! We offer a 100% satisfaction guarantee. If you are not satisfied with any area we cleaned, let
+                    us know within 24 hours and we will re-clean it at no extra charge.
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  
-    <!-- Item 4 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
-          How do I pay for my cleaning services?
-        </button>
-      </h2>
-      <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          We accept convenient payment methods including M-Pesa, direct bank transfers, and major credit cards upon completion of the service.
+
+        <!-- Item 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
+                    How do I pay for my cleaning services?
+                </button>
+            </h2>
+            <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    We accept convenient payment methods including M-Pesa, direct bank transfers, and major credit cards
+                    upon completion of the service.
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  
-    <!-- Item 5 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
-          Do I have to sign a long term contract?
-        </button>
-      </h2>
-      <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Not at all. You can book one-time cleaning sessions as needed. For regular residential or commercial clients, we offer flexible arrangements without locking you into long-term contracts.
+
+        <!-- Item 5 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
+                    Do I have to sign a long term contract?
+                </button>
+            </h2>
+            <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Not at all. You can book one-time cleaning sessions as needed. For regular residential or commercial
+                    clients, we offer flexible arrangements without locking you into long-term contracts.
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  
-    <!-- Item 6 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix" aria-expanded="false" aria-controls="faqSix">
-          Does MJ Cleaning Services offer any other services apart from cleaning?
-        </button>
-      </h2>
-      <div id="faqSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Yes, beyond residential and office cleaning, we specialize in carpet and upholstery shampooing, post-construction cleanup, and professional fumigation and pest control services.
+
+        <!-- Item 6 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqSix" aria-expanded="false" aria-controls="faqSix">
+                    Does MJ Cleaning Services offer any other services apart from cleaning?
+                </button>
+            </h2>
+            <div id="faqSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes, beyond residential and office cleaning, we specialize in carpet and upholstery shampooing,
+                    post-construction cleanup, and professional fumigation and pest control services.
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  
-    <!-- Item 7 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSeven" aria-expanded="false" aria-controls="faqSeven">
-          Do you cover other areas or you just offer cleaning services in Nairobi Kenya only?
-        </button>
-      </h2>
-      <div id="faqSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          While our primary hub is Nairobi, we extend our specialized commercial and residential services to surrounding regions and major urban centers across Kenya upon request.
+
+        <!-- Item 7 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqSeven" aria-expanded="false" aria-controls="faqSeven">
+                    Do you cover other areas or you just offer cleaning services in Nairobi Kenya only?
+                </button>
+            </h2>
+            <div id="faqSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    While our primary hub is Nairobi, we extend our specialized commercial and residential services to
+                    surrounding regions and major urban centers across Kenya upon request.
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  
-    <!-- Item 8 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEight" aria-expanded="false" aria-controls="faqEight">
-          What makes MJ Cleaning different from other cleaning companies in Kenya?
-        </button>
-      </h2>
-      <div id="faqEight" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          We combine trained professional staff, eco-friendly equipment, transparent flat-rate pricing, and a firm 100% satisfaction guarantee to deliver consistent, top-tier service every time.
+
+        <!-- Item 8 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqEight" aria-expanded="false" aria-controls="faqEight">
+                    What makes MJ Cleaning different from other cleaning companies in Kenya?
+                </button>
+            </h2>
+            <div id="faqEight" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    We combine trained professional staff, eco-friendly equipment, transparent flat-rate pricing, and a
+                    firm 100% satisfaction guarantee to deliver consistent, top-tier service every time.
+                </div>
+            </div>
         </div>
-      </div>
+
+
+
     </div>
-  
-  </div>
     <!-- Footer -->
     <footer class="bg-black text-white pt-5 pb-3 border-top border-dark">
         <div class="container">
